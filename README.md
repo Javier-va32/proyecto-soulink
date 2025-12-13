@@ -60,7 +60,9 @@ proyecto-soulink/
 │   ├── colaboraciones.html   
 │   ├── login.html   
 │   └── comunidad.html   
-├── js/ 
+├── js/
+|  ├── darkmode.js   
+│  └── soulink.js   
 ├── README.md              
 ├── css/             
 │   ├── admin.css        
@@ -75,5 +77,6 @@ proyecto-soulink/
 ## 📸 Screenshot 2 - Sección "Contacto"
 
 ![Contacto](assets/images/Screenshots_contacto.png)
+
 
 
