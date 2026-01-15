@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboraciones - SOULINK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Botón de Emergencia -->
+    <div class="emergency-btn">
+        <a href="contacto.html#emergencia" class="btn-emergency"> <!-- Misma carpeta: sin ../ -->
+            <img src="../assets/images/ChatBot.png" alt="Icono de asistente virtual" class="chatbot-icon"> <!-- CORREGIDO: con ../ -->
+            <i class="fas fa-phone-alt"></i> NECESITO AYUDA AHORA
+        </a>
+    </div>
+
+<!-- Navegación -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+        <!-- LOGO -->
+        <a class="navbar-brand" href="../index.html">
+            <img src="../assets/images/logo_sin_nombre.png" alt="SOULINK Logo" height="40">
+            <span class="brand-name">SOULINK</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+
+                <!-- INICIO -->
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+
+                <!-- ACERCA DE -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="acerca.html" data-toggle="dropdown">
+                        Acerca de
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="acerca.html#quienes-somos">¿Quiénes Somos?</a>
+                        <a class="dropdown-item" href="acerca.html#mision-vision">Misión, Visión y Valores</a>
+                        <a class="dropdown-item" href="acerca.html#equipo">Nuestro Equipo</a>
+                        <a class="dropdown-item" href="acerca.html#faq">FAQ</a>
+                        <a class="dropdown-item" href="acerca.html#resultados">Resultados</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="acerca.html">Ver Todo</a>
+                    </div>
+                </li>
+
+                <!-- SERVICIOS -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="servicios.html" data-toggle="dropdown">
+                        Servicios
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="servicios.html#foro">Foro Comunitario</a>
+                        <a class="dropdown-item" href="servicios.html#tests">Tests</a>
+                        <a class="dropdown-item" href="servicios.html#recursos">Recursos</a>
+                        <a class="dropdown-item" href="servicios.html#juegos">Juegos</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="servicios.html">Explorar Todos</a>
+                    </div>
+                </li>
+
+                <!-- COMUNIDAD -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="comunidad.html" data-toggle="dropdown">
+                        Comunidad
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="comunidad.html#testimonios">Testimonios</a>
+                        <a class="dropdown-item" href="comunidad.html#experiencias">Experiencias</a>
+                        <a class="dropdown-item" href="comunidad.html#articulos">Artículos</a>
+                        <a class="dropdown-item" href="comunidad.html#eventos">Eventos</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="comunidad.html">Unirse</a>
+                    </div>
+                </li>
+
+                <!-- CONTACTO -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="contacto.html" data-toggle="dropdown">
+                        Contacto
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="contacto.html#contacto-general">Contacto General</a>
+                        <a class="dropdown-item" href="contacto.html#emergencia">Emergencias</a>
+                        <a class="dropdown-item" href="contacto.html#chat">Chat</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="contacto.html">Ver Contactos</a>
+                    </div>
+                </li>
+
+                <!-- COLABORA -->
+                <li class="nav-item active dropdown">
+                    <a class="nav-link dropdown-toggle" href="colaboraciones.html" data-toggle="dropdown">
+                        Colabora
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="colaboraciones.html#trabajo">Trabaja con Nosotros</a>
+                        <a class="dropdown-item" href="colaboraciones.html#donaciones">Donaciones</a>
+                        <a class="dropdown-item" href="colaboraciones.html#voluntariado">Voluntariado</a>
+                        <a class="dropdown-item" href="colaboraciones.html#colaboraciones-institucionales">Institucionales</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="colaboraciones.html">Ver Oportunidades</a>
+                    </div>
+                </li>
+
+                <!-- TIENDA (ACTIVA) -->
+                <li class="nav-item">
+                    <a class="nav-link" href="tienda.html">
+                       Tienda
+                    </a>
+                </li>
+
+                <!-- CARRITO (ACTIVO) -->
+                <li class="nav-item active">
+                    <a class="nav-link" href="carrito.html" style="position: relative;">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cartBadgeNav" class="cart-badge-nav" style="display: none;">0</span>
+                    </a>
+                </li>
+
+                <!-- USUARIO -->
+                <li class="nav-item dropdown" id="userMenuContainer">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                        <span id="userMenuText">Iniciar Sesión</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="login.html#login">Iniciar Sesión</a>
+                        <a class="dropdown-item" href="login.html#register">Crear Cuenta</a>
+                        <a class="dropdown-item" href="login.html#recover">Recuperar Contraseña</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Colaboraciones -->
+    <section class="hero-collaborations">
+        <div class="container">
+            <h1 class="display-4">Colabora con SOULINK</h1>
+            <p class="lead">Tu apoyo hace posible que continuemos ayudando a miles de personas</p>
+        </div>
+    </section>
+
+    <!-- Trabaja con Nosotros -->
+    <section class="py-5" id="trabajo">
+        <div class="container">
+            <h2 class="text-center mb-5">Trabaja con Nosotros</h2>
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-users fa-3x text-primary mb-3"></i>
+                            <h4>Únete a Nuestro Equipo</h4>
+                            <p>Buscamos profesionales comprometidos con la salud mental que quieran formar parte de este proyecto transformador.</p>
+                            
+                            <h5 class="mt-4">Posiciones Disponibles</h5>
+                            <div class="position-list">
+                                <div class="position-item">
+                                    <h6>Psicólogo/a Voluntario</h6>
+                                    <p><strong>Requisitos:</strong> Título profesional, experiencia en salud mental, compromiso de 4 horas semanales.</p>
+                                    <button class="btn btn-outline-primary btn-sm">Postular</button>
+                                </div>
+                                
+                                <div class="position-item">
+                                    <h6>Moderador/a de Comunidad</h6>
+                                    <p><strong>Requisitos:</strong> Empatía, habilidades de comunicación, disponibilidad en horarios flexibles.</p>
+                                    <button class="btn btn-outline-primary btn-sm">Postular</button>
+                                </div>
+                                
+                                <div class="position-item">
+                                    <h6>Desarrollador/a Full Stack</h6>
+                                    <p><strong>Requisitos:</strong> Conocimientos en Java/Spring Boot, JavaScript, PostgreSQL.</p>
+                                    <button class="btn btn-outline-primary btn-sm">Postular</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <i class="fas fa-handshake fa-3x text-success mb-3"></i>
+                            <h4>Colaboraciones Institucionales</h4>
+                            <p>¿Eres parte de una universidad, ONG, fundación o institución de salud? Trabajemos juntos para ampliar nuestro impacto.</p>
+                            
+                            <div class="collaboration-types mt-4">
+                                <div class="collab-item mb-3">
+                                    <h6><i class="fas fa-university text-primary"></i> Universidades</h6>
+                                    <p>Convenios para prácticas profesionales, investigación conjunta y talleres.</p>
+                                </div>
+                                
+                                <div class="collab-item mb-3">
+                                    <h6><i class="fas fa-hospital text-success"></i> Centros de Salud</h6>
+                                    <p>Derivación de pacientes, capacitación en herramientas digitales, co-creación de contenidos.</p>
+                                </div>
+                                
+                                <div class="collab-item mb-3">
+                                    <h6><i class="fas fa-building text-warning"></i> Empresas</h6>
+                                    <p>Programas de bienestar laboral, charlas de salud mental, sponsorships éticos.</p>
+                                </div>
+                                
+                                <div class="collab-item mb-3">
+                                    <h6><i class="fas fa-globe-americas text-info"></i> ONGs Internacionales</h6>
+                                    <p>Intercambio de buenas prácticas, proyectos de investigación, expansión regional.</p>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-lg btn-block mt-4" data-toggle="modal" data-target="#collaborationModal">
+                                <i class="fas fa-envelope"></i> Contactar para Colaboración
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donaciones -->
+    <section id="donaciones" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Haz una Donación</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <i class="fas fa-heart fa-4x text-danger mb-3"></i>
+                            <h4>Tu Donación Cambia Vidas</h4>
+                            <p class="lead">Cada aporte nos permite mantener SOULINK gratuito y llegar a más personas que necesitan apoyo emocional.</p>
+                            
+                            <div class="donation-stats mb-5">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="stat-box">
+                                            <h3>$5.000</h3>
+                                            <p>Mantiene el servidor por 1 día</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="stat-box">
+                                            <h3>$50.000</h3>
+                                            <p>Capacita a 1 moderador voluntario</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="stat-box">
+                                            <h3>$500.000</h3>
+                                            <p>Desarrolla nuevos recursos terapéuticos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h5 class="mb-3">Selecciona el monto de tu donación</h5>
+                            <div class="donation-amounts mb-4">
+                                <button class="btn btn-outline-primary donation-btn" data-amount="5000">
+                                    $5.000
+                                </button>
+                                <button class="btn btn-outline-primary donation-btn" data-amount="10000">
+                                    $10.000
+                                </button>
+                                <button class="btn btn-outline-primary donation-btn" data-amount="25000">
+                                    $25.000
+                                </button>
+                                <button class="btn btn-outline-primary donation-btn" data-amount="50000">
+                                    $50.000
+                                </button>
+                                <button class="btn btn-outline-primary donation-btn" data-amount="100000">
+                                    $100.000
+                                </button>
+                            </div>
+                            
+                            <div class="custom-donation mb-4">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">$</span>
+                                    </div>
+                                    <input type="number" class="form-control" id="customAmount" placeholder="Otro monto" min="1000" step="1000">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">CLP</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-check mb-4">
+                                <input type="checkbox" class="form-check-input" id="anonymousDonation">
+                                <label class="form-check-label" for="anonymousDonation">
+                                    Donación anónima
+                                </label>
+                            </div>
+                            
+                            <button class="btn btn-danger btn-lg" id="donateButton">
+                                <i class="fas fa-credit-card"></i> Donar Ahora
+                            </button>
+                            
+                            <p class="text-muted mt-3">
+                                <small>Las donaciones son procesadas de forma segura. Emitimos certificado de donación para fines tributarios.</small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Colaboración Institucional -->
+    <div class="modal fade" id="collaborationModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Solicitud de Colaboración Institucional</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="collaborationForm">
+                        <div class="form-group">
+                            <label>Institución / Organización *</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Nombre de contacto *</label>
+                                    <input type="text" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Email *</label>
+                                    <input type="email" class="form-control" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Tipo de colaboración *</label>
+                            <select class="form-control" required>
+                                <option value="">Selecciona una opción</option>
+                                <option value="convenio">Convenio institucional</option>
+                                <option value="voluntariado">Programa de voluntariado</option>
+                                <option value="investigacion">Investigación conjunta</option>
+                                <option value="capacitacion">Capacitación</option>
+                                <option value="sponsor">Sponsorship/Financiamiento</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Descripción de la colaboración propuesta *</label>
+                            <textarea class="form-control" rows="4" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>¿Cómo conociste SOULINK?</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Enviar Solicitud
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>SOULINK</h5>
+                    <p>Juntos construimos una comunidad más fuerte.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Colabora</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#donaciones">Donaciones</a></li> <!-- Misma página: solo # -->
+                        <li><a href="#trabajo">Trabaja con nosotros</a></li> <!-- Misma página: solo # -->
+                        <li><a href="#voluntariado">Voluntariado</a></li> <!-- Misma página: solo # -->
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope"></i> colaboraciones@soulink.cl</li>
+                        <li><i class="fas fa-phone"></i> +56 9 8765 4321</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Emergencia</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone"></i> 4141 (MINSAL)</li>
+                        <li><i class="fas fa-phone"></i> 600 360 7777</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 SOULINK. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a href="privacidad.html" class="text-white mr-3">Privacidad</a> <!-- Misma carpeta: sin ../ -->
+                    <a href="terminos.html" class="text-white">Términos</a> <!-- Misma carpeta: sin ../ -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/soulink.js"></script> 
+    <script src="../js/darkmode.js"></script>
+    <script>
+        // Donation functionality
+        document.querySelectorAll('.donation-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                document.querySelectorAll('.donation-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Clear custom amount
+                document.getElementById('customAmount').value = '';
+                
+                // Update donate button text
+                const amount = this.getAttribute('data-amount');
+                document.getElementById('donateButton').innerHTML = 
+                    `<i class="fas fa-credit-card"></i> Donar $${parseInt(amount).toLocaleString('es-CL')}`;
+            });
+        });
+        
+        // Custom amount input
+        document.getElementById('customAmount').addEventListener('input', function() {
+            // Remove active class from all preset buttons
+            document.querySelectorAll('.donation-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Update donate button text
+            const amount = this.value;
+            if (amount) {
+                document.getElementById('donateButton').innerHTML = 
+                    `<i class="fas fa-credit-card"></i> Donar $${parseInt(amount).toLocaleString('es-CL')}`;
+            }
+        });
+        
+        // Donate button click
+        document.getElementById('donateButton').addEventListener('click', function() {
+            let amount = 0;
+            
+            // Check if a preset button is active
+            const activeButton = document.querySelector('.donation-btn.active');
+            if (activeButton) {
+                amount = activeButton.getAttribute('data-amount');
+            } else if (document.getElementById('customAmount').value) {
+                amount = document.getElementById('customAmount').value;
+            }
+            
+            if (amount > 0) {
+                alert(`Redirigiendo a pasarela de pago para donar $${parseInt(amount).toLocaleString('es-CL')}`);
+                // In a real implementation, this would redirect to payment gateway
+            } else {
+                alert('Por favor selecciona o ingresa un monto para donar');
+            }
+        });
+    </script>
+</body>
+</html>

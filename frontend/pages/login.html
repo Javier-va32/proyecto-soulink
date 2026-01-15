@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión - SOULINK</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .is-invalid {
+            border-color: #dc3545 !important;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='%23dc3545' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right calc(0.375em + 0.1875rem) center;
+            background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+        }
+        
+        .is-invalid:focus {
+            border-color: #dc3545 !important;
+            box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+        }
+        
+        .error-message {
+            color: #dc3545;
+            font-size: 0.875em;
+            margin-top: 0.25rem;
+        }
+        
+        .invalid-feedback {
+            display: block !important;
+        }
+        
+        #acceptTerms.is-invalid {
+            outline: 2px solid #dc3545;
+        }
+        
+        #acceptTerms.is-invalid ~ .form-check-label {
+            color: #dc3545;
+        }
+        
+        #acceptTerms.is-invalid ~ .form-check-label a {
+            color: #dc3545;
+            text-decoration: underline;
+        }
+        
+        /* Estilos para Task 10 */
+        .login-error {
+            animation: shake 0.5s ease-in-out;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        /* ========== CORRECCIÓN BUG FOOTER ========== */
+        .auth-card {
+            min-height: 500px !important;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .auth-card .card-body {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 400px;
+        }
+        
+        #authTabsContent {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tab-pane {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #loginForm, #registerForm, #recoverForm {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Contenedor de éxito que mantiene altura */
+        .login-success-container {
+            flex: 1;
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+        }
+        
+        /* Asegurar que la sección ocupe espacio */
+        section.py-5 {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* El footer siempre abajo */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        footer.footer {
+            margin-top: auto;
+        }
+        /* =========================================== */
+    </style>
+</head>
+
+<!-- Scripts de Bootstrap y jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Tu script de login al final -->
+<script src="../js/login.js"></script>
+
+<body>
+    <!-- Botón de Emergencia -->
+    <div class="emergency-btn">
+        <a href="contacto.html#emergencia" class="btn-emergency">
+            <img src="../assets/images/ChatBot.png" alt="Icono de asistente virtual" class="chatbot-icon">
+            <i class="fas fa-phone-alt"></i> NECESITO AYUDA AHORA
+        </a>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/images/logo_sin_nombre.png" alt="SOULINK Logo" height="40">
+                <span class="brand-name">SOULINK</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="acerca.html" data-toggle="dropdown">Acerca de</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="acerca.html#quienes-somos">¿Quiénes Somos?</a>
+                            <a class="dropdown-item" href="acerca.html#mision-vision">Misión, Visión y Valores</a>
+                            <a class="dropdown-item" href="acerca.html#equipo">Nuestro Equipo</a>
+                            <a class="dropdown-item" href="acerca.html#faq">FAQ</a>
+                            <a class="dropdown-item" href="acerca.html#resultados">Resultados</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="acerca.html">Ver Todo</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="servicios.html" data-toggle="dropdown">Servicios</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="servicios.html#foro">Foro Comunitario</a>
+                            <a class="dropdown-item" href="servicios.html#tests">Tests</a>
+                            <a class="dropdown-item" href="servicios.html#recursos">Recursos</a>
+                            <a class="dropdown-item" href="servicios.html#juegos">Juegos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="servicios.html">Explorar Todos</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="comunidad.html" data-toggle="dropdown">Comunidad</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="comunidad.html#testimonios">Testimonios</a>
+                            <a class="dropdown-item" href="comunidad.html#experiencias">Experiencias</a>
+                            <a class="dropdown-item" href="comunidad.html#articulos">Artículos</a>
+                            <a class="dropdown-item" href="comunidad.html#eventos">Eventos</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="comunidad.html">Unirse</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="contacto.html" data-toggle="dropdown">Contacto</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="contacto.html#contacto-general">Contacto General</a>
+                            <a class="dropdown-item" href="contacto.html#emergencia">Emergencias</a>
+                            <a class="dropdown-item" href="contacto.html#chat">Chat</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="contacto.html">Ver Contactos</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="colaboraciones.html" data-toggle="dropdown">Colabora</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="colaboraciones.html#trabajo">Trabaja con Nosotros</a>
+                            <a class="dropdown-item" href="colaboraciones.html#donaciones">Donaciones</a>
+                            <a class="dropdown-item" href="colaboraciones.html#voluntariado">Voluntariado</a>
+                            <a class="dropdown-item" href="colaboraciones.html#colaboraciones-institucionales">Institucionales</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="colaboraciones.html">Ver Oportunidades</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="carrito.html" style="position: relative;">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="cartBadgeNav" class="cart-badge-nav" style="display: none;">0</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item active dropdown" id="userMenuContainer">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                            <span id="userMenuText">Iniciar Sesión</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="login.html#login">Iniciar Sesión</a>
+                            <a class="dropdown-item" href="login.html#register">Crear Cuenta</a>
+                            <a class="dropdown-item" href="login.html#recover">Recuperar Contraseña</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Login/Registro -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card auth-card">
+                        <div class="card-body">
+                            <ul class="nav nav-tabs" id="authTabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login">
+                                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="register-tab" data-toggle="tab" href="#register">
+                                        <i class="fas fa-user-plus"></i> Crear Cuenta
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="recover-tab" data-toggle="tab" href="#recover">
+                                        <i class="fas fa-key"></i> Recuperar Contraseña
+                                    </a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content mt-4" id="authTabsContent">
+                                <!-- Login Tab -->
+                                <div class="tab-pane fade show active" id="login">
+                                    <form id="loginForm">
+                                        <div class="form-group">
+                                            <label for="loginEmail">Email *</label>
+                                            <input type="email" class="form-control" id="loginEmail" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="loginPassword">Contraseña *</label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" id="loginPassword" required>
+                                                <div class="input-group-append">
+                                                    <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                                        <i class="fas fa-eye"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">Recordarme</label>
+                                            <a href="#recover" class="float-right" data-toggle="tab">¿Olvidaste tu contraseña?</a>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                                            <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                                        </button>
+
+                                        <div class="alert alert-info mt-4">
+                                            <i class="fas fa-info-circle"></i>
+                                            <strong>Nota:</strong> Puedes usar SOULINK sin crear una cuenta, pero algunas funciones como guardar tus resultados de tests o participar en el foro requieren registro.
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- Register Tab -->
+                                <div class="tab-pane fade" id="register">
+                                    <form id="registerForm">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="regNombre">Nombre *</label>
+                                                    <input type="text" class="form-control" id="regNombre" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="regApellido">Apellido *</label>
+                                                    <input type="text" class="form-control" id="regApellido" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="regTelefono">Número de Teléfono *</label>
+                                            <input type="tel" class="form-control" id="regTelefono" placeholder="Ej: +34 612 345 678" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="regEmail">Email *</label>
+                                            <input type="email" class="form-control" id="regEmail" required>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="regPassword">Contraseña *</label>
+                                                    <div class="input-group">
+                                                        <input type="password" class="form-control" id="regPassword" required>
+                                                        <div class="input-group-append">
+                                                            <button class="btn btn-outline-secondary" type="button" id="toggleRegPassword">
+                                                                <i class="fas fa-eye"></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    <small class="form-text text-muted">Mínimo 8 caracteres</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="regConfirmPassword">Confirmar Contraseña *</label>
+                                                    <input type="password" class="form-control" id="regConfirmPassword" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="regFechaNacimiento">Fecha de Nacimiento</label>
+                                            <input type="date" class="form-control" id="regFechaNacimiento">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Género</label>
+                                            <div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="genero" id="femenino" value="femenino">
+                                                    <label class="form-check-label" for="femenino">Femenino</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="genero" id="masculino" value="masculino">
+                                                    <label class="form-check-label" for="masculino">Masculino</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="genero" id="otro" value="otro">
+                                                    <label class="form-check-label" for="otro">Otro</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="genero" id="prefieroNoDecir" value="prefieroNoDecir">
+                                                    <label class="form-check-label" for="prefieroNoDecir">Prefiero no decir</label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+                                            <label class="form-check-label" for="acceptTerms">
+                                                Acepto los <a href="terminos.html" target="_blank">Términos y Condiciones</a> y la <a href="privacidad.html" target="_blank">Política de Privacidad</a> *
+                                            </label>
+                                        </div>
+
+                                        <div class="form-group form-check">
+                                            <input type="checkbox" class="form-check-input" id="newsletter">
+                                            <label class="form-check-label" for="newsletter">Quiero recibir información sobre nuevos recursos y talleres</label>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-success btn-block btn-lg">
+                                            <i class="fas fa-user-plus"></i> Crear Cuenta
+                                        </button>
+                                    </form>
+                                </div>
+
+                                <!-- Recover Tab -->
+                                <div class="tab-pane fade" id="recover">
+                                    <form id="recoverForm">
+                                        <div class="form-group">
+                                            <label for="recoverEmail">Email registrado *</label>
+                                            <input type="email" class="form-control" id="recoverEmail" required>
+                                            <small class="form-text text-muted">Te enviaremos un enlace para restablecer tu contraseña</small>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                                            <i class="fas fa-paper-plane"></i> Enviar Enlace de Recuperación
+                                        </button>
+
+                                        <div class="alert alert-success mt-3" id="recoverSuccess" style="display: none;">
+                                            <i class="fas fa-check-circle"></i> Hemos enviado un enlace de recuperación a tu email. Revisa tu bandeja de entrada.
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beneficios de Registro -->
+                    <div class="card mt-4">
+                        <div class="card-body">
+                            <h5 class="card-title">¿Por qué registrarte en SOULINK?</h5>
+                            <div class="row">
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-history fa-2x text-primary"></i>
+                                    <h6>Historial Personal</h6>
+                                    <p>Guarda tus resultados de tests y sigue tu progreso</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-comments fa-2x text-success"></i>
+                                    <h6>Participación en Foro</h6>
+                                    <p>Comparte experiencias y recibe apoyo de la comunidad</p>
+                                </div>
+                                <div class="col-md-4 text-center">
+                                    <i class="fas fa-bookmark fa-2x text-warning"></i>
+                                    <h6>Recursos Guardados</h6>
+                                    <p>Guarda tus recursos favoritos para acceder rápido</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+    <footer class="footer bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>SOULINK</h5>
+                    <p>Tu espacio seguro de apoyo emocional.</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#contacto-general">Formulario</a></li> <!-- Misma página: solo # -->
+                        <li><a href="#emergencia">Emergencia</a></li> <!-- Misma página: solo # -->
+                        <li><a href="#chat">Chat</a></li> <!-- Misma página: solo # -->
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Información</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-envelope"></i> info@soulink.cl</li>
+                        <li><i class="fas fa-phone"></i> +56 9 1234 5678</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Santiago, Chile</li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Emergencia 24/7</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone"></i> 4141 (MINSAL)</li>
+                        <li><i class="fas fa-phone"></i> 600 360 7777</li>
+                        <li><i class="fas fa-phone"></i> 1412 (SENDA)</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; 2025 SOULINK. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <a href="privacidad.html" class="text-white mr-3">Privacidad</a> <!-- Misma carpeta: sin ../ -->
+                    <a href="terminos.html" class="text-white">Términos</a> <!-- Misma carpeta: sin ../ -->
+                    <a href="acerca.html#faq" class="text-white ml-3">FAQ</a> <!-- Misma carpeta: sin ../ -->
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

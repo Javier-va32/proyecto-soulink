@@ -22,7 +22,7 @@
 
 </td>
 <td align="center" valign="middle" width="320">
-  <img src="assets/images/logo_Q-ERO.png" alt="Logo Q-ERO v3 Protocol" width="270">
+  <img src="frontend/assets/images/logo_Q-ERO.png" alt="Logo Q-ERO v3 Protocol" width="270">
 </td
 </tr>
 </table>
@@ -108,104 +108,166 @@ Tu contribución ayuda a:
 ## 📁 Estructura del Proyecto
 ```
 proyecto-soulink/
-├── assets/images
-│   ├── Conejo/
-│   ├── MerchConsejin/
-│   └── team/
-├── pages/
-│   ├── acerca.html
-│   ├── servicios.html
-│   ├── contacto.html
-│   ├── tienda.html
-│   ├── carrito.html
-│   ├── configuracion.html
-│   ├── colaboraciones.html
-│   ├── perfil.html
-│   ├── login.html
-│   ├── comunidad.html
-│   └── admin/
-│       ├── index.html
-│       ├── admin_login.html
-│       ├── panel_admin.html
-│       ├── agregar-producto.html
-│       ├── agregar-articulo.html
-│       └── js/
-│           ├── login_admin.js
-│           └── admin-protection.js
-├── js/
-│   ├── login.js
-│   └── soulink.js
-├── css/
-│   ├── responsive.css
-│   └── styles.css
-├── data/
-│   ├── usuarios.json
-│   └── productos.json
-├── database/
-│   ├── DER_soulink.png        
-│   └── soulink.sql
-├── README.md
-├── index.html
-├── ACCESO LOGIN Y ADMIN.txt
-└── .gitignore
-    
+├── frontend/                 <-- Todo tu sitio web estático
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── Conejo/
+│   │   │   ├── MerchConsejin/
+│   │   │   └── team/
+│   ├── pages/
+│   │   ├── acerca.html
+│   │   ├── servicios.html
+│   │   ├── contacto.html
+│   │   ├── tienda.html
+│   │   ├── carrito.html
+│   │   ├── configuracion.html
+│   │   ├── colaboraciones.html
+│   │   ├── perfil.html
+│   │   ├── login.html
+│   │   ├── comunidad.html
+│   │   └── admin/
+│   │       ├── index.html
+│   │       ├── admin_login.html
+│   │       ├── panel_admin.html
+│   │       ├── agregar-producto.html
+│   │       ├── agregar-articulo.html
+│   │       └── js/
+│   │           ├── login_admin.js
+│   │           └── admin-protection.js
+│   ├── js/
+│   │   ├── login.js
+│   │   └── soulink.js
+│   ├── css/
+│   │   ├── responsive.css
+│   │   └── styles.css
+│   ├── data/
+│   │   ├── usuarios.json
+│   │   └── productos.json
+│   ├── database/
+│   │   ├── DER_soulink.png        
+│   │   └── soulink.sql
+│   ├── index.html
+│   └── README.md
+│
+├── backend/                  <-- Spring Boot API
+│   ├── .mvn/                 <-- Maven Wrapper
+│   │   └── wrapper/
+│   │       ├── maven-wrapper.properties
+│   ├── mvnw                  <-- Script Linux/macOS
+│   ├── mvnw.cmd              <-- Script Windows
+│   ├── pom.xml
+│   ├── src/
+│   │   ├── main/java/com/soulink/
+│   │   │   ├── controller/
+│   │   │   ├── model/
+│   │   │   ├── repository/
+│   │   │   └── service/
+│   │   └── resources/
+│   │       ├── application-dev.yml
+│   │       └── application-prod.yml
+│
+├── docs/                     <-- Copia del frontend para GitHub Pages
+│   ├── assets/
+│   │   ├── images/
+│   │   │   ├── Conejo/
+│   │   │   ├── MerchConsejin/
+│   │   │   └── team/
+│   ├── pages/
+│   │   ├── acerca.html
+│   │   ├── servicios.html
+│   │   ├── contacto.html
+│   │   ├── tienda.html
+│   │   ├── carrito.html
+│   │   ├── configuracion.html
+│   │   ├── colaboraciones.html
+│   │   ├── perfil.html
+│   │   ├── login.html
+│   │   ├── comunidad.html
+│   │   └── admin/
+│   │       ├── index.html
+│   │       ├── admin_login.html
+│   │       ├── panel_admin.html
+│   │       ├── agregar-producto.html
+│   │       ├── agregar-articulo.html
+│   │       └── js/
+│   │           ├── login_admin.js
+│   │           └── admin-protection.js
+│   ├── js/
+│   │   ├── login.js
+│   │   └── soulink.js
+│   ├── css/
+│   │   ├── responsive.css
+│   │   └── styles.css
+│   ├── data/
+│   │   ├── usuarios.json
+│   │   └── productos.json
+│   ├── database/
+│   │   ├── DER_soulink.png        
+│   │   └── soulink.sql
+│   ├── index.html
+│   └── README.md
+│
+├── .gitignore                <-- Controla archivos que no se suben
+├── .gitattributes            <-- Controla finales de línea de mvnw y cmd
+└── README.md                 <-- Información del proyecto general
+
 ```
 ## 📸 Screenshot 1 - Sección "Acerca de"
 
-![Acerca de](assets/images/Screenshots_acerca.png)
+![Acerca de](frontend/assets/images/Screenshots_acerca.png)
 
 ## 📸 Screenshot 2 - Sección "Contacto"
 
-![Contacto](assets/images/Screenshots_contacto.png)
+![Contacto](frontend/assets/images/Screenshots_contacto.png)
 
 ## 📸 Screenshot 3 - Sección "Tienda"
 
-![Tienda](assets/images/ss-Tienda.png)
+![Tienda](frontend/assets/images/ss-Tienda.png)
 
 ## 📸 Screenshot 4 - Sección "Carrito"
 
-![Carrito](assets/images/ss-Carrito.png)
+![Carrito](frontend/assets/images/ss-Carrito.png)
 
 ## 📸 Screenshot 5 - Sección "Artículos"
 
-![Artículos](assets/images/ss-Articulos.png)
+![Artículos](frontend/assets/images/ss-Articulos.png)
 
 ## 📸 Screenshot 6 - Formulario ADMIN "Agregar Articulo o Agregar Producto"
 
-![Agregar Articulo y Producto](assets/images/ss_agregarproducto-articulo.png)
+![Agregar Articulo y Producto](frontend/assets/images/ss_agregarproducto-articulo.png)
 
 ## 📸 Screenshot 7 - Login validar: Nombre - Numero - Mail - Contraseña
 
-![ValidacionesLogin](assets/images/ss_validacionlogin.png)
+![ValidacionesLogin](frontend/assets/images/ss_validacionlogin.png)
 
 ## 📸 Screenshot 8 - Login Usuario
 
-![LoginAceptado](assets/images/ss_loginclienteaceptado.png)
+![LoginAceptado](frontend/assets/images/ss_loginclienteaceptado.png)
 
 ## 📸 Screenshot 9 - Configuracion Usuario
 
-![Configuracion Usuario](assets/images/ss_configuracionperfil.png)
+![Configuracion Usuario](docs/assets/images/ss_configuracionperfil.png)
 
 ## 📸 Screenshot 10 - Perfil Usuario
 
-![Perfil Usuario](assets/images/ss_perfilusuario.png)
+![Perfil Usuario](frontend/assets/images/ss_perfilusuario.png)
 
 ## 📸 Screenshot 11 - Login ADMIN
 
-![LoginAdmin](assets/images/ss_loginadmin.png)
-![LoginAdmin2](assets/images/ss_loginadmin2.png)
+![LoginAdmin](frontend/assets/images/ss_loginadmin.png)
+![LoginAdmin2](frontend/assets/images/ss_loginadmin2.png)
 
 ## 📸 Screenshot 12 - Tablas en DBeaver
 
-![Tablas](assets/images/ss_TablasPostgreSQL.png)
+![Tablas](frontend/assets/images/ss_TablasPostgreSQL.png)
 
 ## 📸 Screenshot 13 - Consulta Clientes
 
-![Consulta Clientes](assets/images/ss_ConsultaTablas.png)
+![Consulta Clientes](frontend/assets/images/ss_ConsultaTablas.png)
 
 ## 📸 Screenshot 14 - DER Soulink
 
-![DER Soulink](assets/images/DER_soulink.png)
+![DER Soulink](frontend/assets/images/DER_soulink.png)
 
 
 
