@@ -1,0 +1,15 @@
+meta {
+  name: Consultar Compras
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/compras
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

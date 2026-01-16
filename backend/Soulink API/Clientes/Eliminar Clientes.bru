@@ -1,0 +1,15 @@
+meta {
+  name: Eliminar Clientes
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{local}}/clientes/
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

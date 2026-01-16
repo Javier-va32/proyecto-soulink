@@ -274,6 +274,22 @@ proyecto-soulink/
 
 ![DER Soulink](frontend/assets/images/DER_soulink.png)
 
+## 📸 Screenshot 15 - POST - Registrar Usuario
+
+![DER Soulink](frontend/assets/images/ss_registrar-usuario.png)
+
+## 📸 Screenshot 16 - Login de Usuario Creado
+
+![DER Soulink](frontend/assets/images/ss_login-usuario.png)
+
+## 📸 Screenshot 17 - GET - Productos
+
+![DER Soulink](frontend/assets/images/ss_get-productos.png)
+
+## 📸 Screenshot 18 - POST- Productos
+
+![DER Soulink](frontend/assets/images/ss_post-producto.png)
+
 
 
 

@@ -58,7 +58,7 @@ function verificarSesionEnNavbar() {
         console.log("✅ Usuario autenticado detectado:", usuarioActual.nombre_completo);
         
         // Actualizar texto del menú (mostrar solo el primer nombre)
-        const primerNombre = usuarioActual.nombre_completo.split(' ')[0];
+        const primerNombre = usuarioActual.nombre.split(' ')[0];
         userMenuText.innerHTML = `
             <i class="fas fa-user-circle mr-1"></i>
             ${primerNombre}

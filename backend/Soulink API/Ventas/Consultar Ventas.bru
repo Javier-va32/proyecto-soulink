@@ -1,0 +1,15 @@
+meta {
+  name: Consultar Ventas
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/ventas
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

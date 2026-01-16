@@ -1,0 +1,15 @@
+meta {
+  name: Consultar Articulos
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/articulos
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

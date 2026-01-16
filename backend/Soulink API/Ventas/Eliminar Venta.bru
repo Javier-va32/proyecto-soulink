@@ -1,0 +1,15 @@
+meta {
+  name: Eliminar Venta
+  type: http
+  seq: 3
+}
+
+delete {
+  url: {{local}}/ventas/
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

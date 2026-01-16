@@ -1,0 +1,15 @@
+meta {
+  name: Consultar Usuarios
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{local}}/usuarios
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

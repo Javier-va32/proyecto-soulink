@@ -1,0 +1,27 @@
+meta {
+  name: Registrar Usuario
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{local}}/usuarios/register
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "nombre": "Leonardo SotoMayor",
+    "email": "leoS@example.com",
+    "password": "Password123",
+    "id_rol": 3
+  }
+  
+  
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
